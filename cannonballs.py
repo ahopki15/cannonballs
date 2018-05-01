@@ -133,13 +133,13 @@ def make_plots(planet):
 		plt.tick_params(axis='both',labelsize=16)
 		plt.show()
 			
-		masses = np.linspace(.25,8,20)
+		masses = np.linspace(.25,4,20)
 		zeros = []
 		for m in masses:
 			t = [t0]
 			X = [X0]
 			i = 1
-			while (i < N_steps and X[-1][1])>=0:
+			while i >= 1 and X[-1][1]>=0:
 				t.append(t[i-1]+h)
 				new_X = X[i-1]+delta_x_t_h(X[i-1],f)
 				X.append(new_X)
@@ -149,14 +149,16 @@ def make_plots(planet):
 			zeros.append(estimate_zero(X))
 			
 		fg, ax = plt.subplots(1,1,figsize=(12,8))
-		masses3 = [1,2,4,8]
+		masses3 = [1,2,4]
 		for m in masses3:
+			i = 1
 			t = [t0]
 			X3 = [X0]
-			for i in range(1,N_steps):
+			while (i>=0) and (X3[-1][1] >=0):
 				t.append(t[i-1]+h)
 				new_X = X3[i-1]+delta_x_t_h(X3[i-1],f)
 				X3.append(new_X)
+				i = i + 1
 			t = np.array(t)
 			X3 = np.array(X3)
 			plt.plot(X3[:,0],X3[:,1],lw=3,label='m='+str(m)+' kg')
@@ -165,8 +167,8 @@ def make_plots(planet):
 		plt.title('Trajectories of Cannon Balls of Various Masses on Mars',fontsize=20)
 		plt.tick_params(axis='both',labelsize=16)
 		plt.legend(fontsize=18)
-		plt.ylim(0,150)
-		plt.xlim(-10,650)
+		plt.ylim(0,300)
+		plt.xlim(-10,2000)
 		plt.show()
 
 		fg, ax = plt.subplots(1,1,figsize=(12,8))
