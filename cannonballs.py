@@ -162,7 +162,7 @@ def make_plots(planet):
 			plt.plot(X3[:,0],X3[:,1],lw=3,label='m='+str(m)+' kg')
 		plt.xlabel('Horizontal Distance',fontsize=18)
 		plt.ylabel('Height',fontsize=18)
-		plt.title('Trajectories of Cannon Balls of Various Masses on Earth',fontsize=20)
+		plt.title('Trajectories of Cannon Balls of Various Masses on Mars',fontsize=20)
 		plt.tick_params(axis='both',labelsize=16)
 		plt.legend(fontsize=18)
 		plt.ylim(0,150)
@@ -173,7 +173,7 @@ def make_plots(planet):
 		plt.scatter(masses,zeros,lw=3)
 		plt.xlabel('Mass (kg)',fontsize=18)
 		plt.ylabel('Distance Travelled (m)',fontsize=18)
-		plt.title('Distance Travelled of Cannonballs of Different Masses on Earth',fontsize=20)
+		plt.title('Distance Travelled of Cannonballs of Different Masses on Mars',fontsize=20)
 		plt.tick_params(axis='both',labelsize=16)
 		plt.show()
 		
