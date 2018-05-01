@@ -108,7 +108,7 @@ def make_plots(planet):
 		plt.scatter(masses,zeros,lw=3)
 		plt.xlabel('Mass (kg)',fontsize=18)
 		plt.ylabel('Distance Travelled (m)',fontsize=18)
-		plt.title('Distance Travelled of Cannonballs of Different Masses on Earth',fontsize=20)
+		plt.title('Distance Travelled of Cannonballs of Different Masses on Mars',fontsize=20)
 		plt.tick_params(axis='both',labelsize=16)
 		plt.show()
 	elif planet == 'Mars':
@@ -129,7 +129,7 @@ def make_plots(planet):
 		plt.ylim(0,60)
 		plt.xlabel('Horizontal Distance',fontsize=18)
 		plt.ylabel('Height',fontsize=18)
-		plt.title('Trajectory of 1kg Cannon Ball on Earth',fontsize=20)
+		plt.title('Trajectory of 1kg Cannon Ball on Mars',fontsize=20)
 		plt.tick_params(axis='both',labelsize=16)
 		plt.show()
 			
